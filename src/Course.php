@@ -1,5 +1,6 @@
 <?php
-require 'CoursesType.php';
+
+namespace App;
 
 class Course {
     public function __construct(
@@ -7,7 +8,7 @@ class Course {
         protected string $subtitle,
         protected string $description,
         protected array $tags,
-        protected CoursesType $type = CoursesType::Free
+        protected CoursesType $type = CoursesType::FREE
     ) {}
 
     public function __get($name) {
