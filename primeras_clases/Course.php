@@ -18,7 +18,7 @@ class Course {
     }
 
     public function __toString() {
-        $html = "<h1>{$this->title} - {$this->type->label()}</h1>";
+        $html = "<h1>{$this->title} - {$this->type->value}</h1>";
         $html .= "<h2>{$this->subtitle}</h2>";
         $html .= "<p>{$this->description}</p>";
         

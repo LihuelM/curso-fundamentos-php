@@ -2,14 +2,14 @@
 
 namespace App;
 
-class CoursesType
+enum CoursesType: string
 { 
-    public const FREE = 'free';
-    public const PAID = 'paid';
+    case FREE = 'FREE';
+    case PAID = 'PAID';
 
-    public static function label(string $type): string
+    public function label(): string
     {
-        return match($type) {
+        return match($this) {
             self::FREE => 'Curso Gratis',
             self::PAID => 'Curso de pago',
             default => 'Tipo desconocido',

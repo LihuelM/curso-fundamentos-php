@@ -1,0 +1,30 @@
+#!usr/bin/env php
+<?php
+
+require __DIR__ . '/../vendor/autoload.php';
+
+// $iaService = new App\FakeAIService();
+$iaService = new App\OllamaAIService();
+
+echo 'Ask anithing to AI...' . PHP_EOL;
+
+while (true) {
+    $input = readline('> ');
+
+    if ($input === 'exit' || $input === '') {
+        break;
+    }elseif (strtolower($input) === 'hola') {
+        echo 'AI: Hola, ¿cómo puedo ayudarte?' . PHP_EOL;
+        continue;
+    } elseif (strtolower($input) === 'adios') {
+        echo 'AI: Adiós, que tengas un buen día!' . PHP_EOL;
+        break;
+    } elseif (strtolower($input) === 'ayuda') {
+        echo 'AI: Puedes preguntar cualquier cosa. Escribe "exit" para salir.' . PHP_EOL;
+        continue;
+    }
+
+
+    $response = $iaService->getResponse($input);
+    echo $response . PHP_EOL;   
+}
