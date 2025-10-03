@@ -3,7 +3,7 @@
 namespace App;
 use ArdaGnsrn\Ollama\Ollama;
 
-class OllamaAIService
+class OllamaAIService  implements AIServiceInterface
 {
   protected $cliente;
 
